@@ -18,6 +18,10 @@ const onefakerest = require('onefakerest');
 const faker = require('faker');
 
 const handler = onefakerest({
+  pagination: {  // pagination is optional. it's absence will return all records.
+    limit: 5
+  },
+
   data: {
     users: {
       records: 2,
@@ -51,7 +55,7 @@ const handler = onefakerest({
 const server = http.createServer(handler);
 server.on('listening', function () {
   console.log(`listening on port ${server.address().port}`);
-  // http://localhost:8000/notes
+  // http://localhost:8000/notes?page=1&limit=10
 });
 server.listen(8000);
 ```
