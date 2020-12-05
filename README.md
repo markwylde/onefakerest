@@ -21,28 +21,38 @@ const faker = require('faker');
 const handler = onefakerest({
   data: {
     users: {
-      records: 10,
-      generator: () => ({
-        id: faker.uuid(),
-        firstName: faker.firstName(),
-        lastName: faker.lastName()
-      })
+      records: 2,
+      generator: function () {
+        return {
+          id: faker.random.uuid(),
+          firstName: faker.name.firstName(),
+          lastName: faker.name.lastName(),
+          noteCount: 0
+        };
+      }
     },
+
     notes: {
-      records: 100,
-      generator: () => ({
-        id: faker.uuid(),
-        userId: faker.random.arrayElement(fakerest.data.users).id,
-        subject: faker.lorem.paragraphs(1),
-        content: faker.lorem.paragraphs(3)
-      })
+      records: 10,
+      generator: function ({ users }) {
+        const user = faker.random.arrayElement(users);
+        user.noteCount = user.noteCount + 1;
+
+        return {
+          id: faker.random.uuid(),
+          userId: user.id,
+          subject: faker.lorem.sentence(5),
+          content: faker.lorem.paragraphs(2)
+        };
+      }
     }
   }
-}
+});
 
 const server = http.createServer(handler);
 server.on('listening', function () {
   console.log(`listening on port ${server.address().port}`);
+  // http://localhost:8000/notes
 });
 server.listen(8000);
 ```
