@@ -1,0 +1,27 @@
+{
+  "name": "onefakerest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markwylde/onefakerest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markwylde/onefakerest/issues"
+  },
+  "homepage": "https://github.com/markwylde/onefakerest#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "faker": "^5.1.0"
+  },
+  "devDependencies": {
+    "basictap": "^1.1.11"
+  }
+}
