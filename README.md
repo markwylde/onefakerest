@@ -13,25 +13,29 @@ npm install --save onefakerest
 ```
 
 ## Usage
-## Example
 ```javascript
 const http = require('http');
 const onefakerest = require('onefakerest');
 const faker = require('faker');
 
 const handler = onefakerest({
-  models: {
+  data: {
     users: {
-      records: 100,
-      properties: {
-        firstName: () => faker.firstName(),
-        lastName: () => faker.lastName()
-      }
+      records: 10,
+      generator: () => ({
+        id: faker.uuid(),
+        firstName: faker.firstName(),
+        lastName: faker.lastName()
+      })
     },
     notes: {
-      userId: ({ users }) => onefakerest.pickRandom(users).id,
-      subject: () => faker.paragraph(),
-      content: () => faker.paragraphs()
+      records: 100,
+      generator: () => ({
+        id: faker.uuid(),
+        userId: faker.random.arrayElement(fakerest.data.users).id,
+        subject: faker.lorem.paragraphs(1),
+        content: faker.lorem.paragraphs(3)
+      })
     }
   }
 }
