@@ -4,8 +4,7 @@
 [![GitHub](https://img.shields.io/github/license/markwylde/onefakerest?style=flat-square)](https://github.com/markwylde/onefakerest/blob/master/LICENSE)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/standard/semistandard)
 
-A library for NodeJS that allows you to accumulate a load of changes, then run a function
-after a set amount of time with those changes.
+An http handler for NodeJS that sets up a fake rest endpoint.
 
 ## Installation
 ```bash

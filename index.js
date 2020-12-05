@@ -28,6 +28,16 @@ function onefakerest (config) {
       return;
     }
 
+    if (config.pagination) {
+      const page = parsedUrl.searchParams.get('page') || 1;
+      const limit = parsedUrl.searchParams.get('limit') || (config.pagination && config.pagination.limit);
+      const skip = (page - 1) * limit;
+      const paginatedData = collectionData.slice(skip, skip + limit);
+
+      response.end(JSON.stringify(paginatedData));
+      return;
+    }
+
     response.end(JSON.stringify(collectionData));
   };
 }

@@ -23,6 +23,7 @@
   "devDependencies": {
     "axios": "^0.21.0",
     "basictap": "^1.1.11",
-    "c8": "^7.3.5"
+    "c8": "^7.3.5",
+    "semistandard": "^16.0.0"
   }
 }
