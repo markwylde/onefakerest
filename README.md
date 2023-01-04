@@ -25,7 +25,7 @@ Then visiting:
 ```javascript
 import http from 'http';
 import { faker } from '@faker-js/faker';
-import onefakerest from './index.js';
+import onefakerest from 'onefakerest';
 
 const handler = onefakerest({
   pagination: { // pagination is optional. it's absence will return all records.
