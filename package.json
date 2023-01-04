@@ -1,6 +1,6 @@
 {
   "name": "onefakerest",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A http handler for creating a demo rest endpoint",
   "type": "module",
   "main": "index.js",
