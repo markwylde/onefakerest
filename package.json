@@ -12,8 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/markwylde/onefakerest.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["rest", "seed", "demo", "demo data", "data"],
+  "author": {
+   "email": "me@markwylde.com",
+   "name": "Mark Wylde",
+   "url": "https://github.com/markwylde"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/markwylde/onefakerest/issues"
@@ -25,9 +29,7 @@
     "basictap": "^3.4.3",
     "c8": "^7.12.0",
     "eslint": "^8.31.0",
+    "eslint-config-semistandard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0"
-  },
-  "dependencies": {
-    "eslint-config-semistandard": "^17.0.0"
   }
 }
