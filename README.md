@@ -28,14 +28,14 @@ import { faker } from '@faker-js/faker';
 import onefakerest from './index.js';
 
 const handler = onefakerest({
-  pagination: {  // pagination is optional. it's absence will return all records.
+  pagination: { // pagination is optional. it's absence will return all records.
     limit: 5
   },
 
   data: {
     users: {
       records: 2,
-      generator: function () {
+      generator () {
         return {
           id: faker.datatype.uuid(),
           firstName: faker.name.firstName(),
@@ -47,9 +47,9 @@ const handler = onefakerest({
 
     notes: {
       records: 10,
-      generator: function ({ users }) {
+      generator ({ users }) {
         const user = faker.helpers.arrayElement(users);
-        user.noteCount = user.noteCount + 1;
+        user.noteCount += 1;
 
         return {
           id: faker.datatype.uuid(),
@@ -63,7 +63,7 @@ const handler = onefakerest({
 });
 
 const server = http.createServer(handler);
-server.on('listening', function () {
+server.on('listening', () => {
   console.log(`listening on port ${server.address().port}`);
   // http://localhost:8000/notes?page=1&limit=10
 });
