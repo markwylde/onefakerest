@@ -42,4 +42,4 @@ function onefakerest (config) {
   };
 }
 
-module.exports = onefakerest;
+export default onefakerest;

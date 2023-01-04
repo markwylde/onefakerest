@@ -11,11 +11,21 @@ An http handler for NodeJS that sets up a fake rest endpoint.
 npm install --save onefakerest
 ```
 
+## Demo
+Run the demo server by running:
+```bash
+npm run start
+```
+
+Then visiting:
+- http://localhost:8000/users?page=1&limit=10
+- http://localhost:8000/notes?page=1&limit=10
+
 ## Usage
 ```javascript
-const http = require('http');
-const onefakerest = require('onefakerest');
-const faker = require('faker');
+import http from 'http';
+import { faker } from '@faker-js/faker';
+import onefakerest from './index.js';
 
 const handler = onefakerest({
   pagination: {  // pagination is optional. it's absence will return all records.
@@ -27,7 +37,7 @@ const handler = onefakerest({
       records: 2,
       generator: function () {
         return {
-          id: faker.random.uuid(),
+          id: faker.datatype.uuid(),
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
           noteCount: 0
@@ -38,11 +48,11 @@ const handler = onefakerest({
     notes: {
       records: 10,
       generator: function ({ users }) {
-        const user = faker.random.arrayElement(users);
+        const user = faker.helpers.arrayElement(users);
         user.noteCount = user.noteCount + 1;
 
         return {
-          id: faker.random.uuid(),
+          id: faker.datatype.uuid(),
           userId: user.id,
           subject: faker.lorem.sentence(5),
           content: faker.lorem.paragraphs(2)
