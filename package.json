@@ -1,6 +1,6 @@
 {
   "name": "onefakerest",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A http handler for creating a demo rest endpoint",
   "type": "module",
   "main": "index.js",
@@ -12,11 +12,17 @@
     "type": "git",
     "url": "git+https://github.com/markwylde/onefakerest.git"
   },
-  "keywords": ["rest", "seed", "demo", "demo data", "data"],
+  "keywords": [
+    "rest",
+    "seed",
+    "demo",
+    "demo data",
+    "data"
+  ],
   "author": {
-   "email": "me@markwylde.com",
-   "name": "Mark Wylde",
-   "url": "https://github.com/markwylde"
+    "email": "me@markwylde.com",
+    "name": "Mark Wylde",
+    "url": "https://github.com/markwylde"
   },
   "license": "MIT",
   "bugs": {
