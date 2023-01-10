@@ -1,19 +1,12 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true
-  },
-  extends: 'semistandard',
-  overrides: [
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-  },
+  extends: 'standard',
   rules: {
     'object-property-newline': [
       'error',
       { allowAllPropertiesOnSameLine: false }
-    ]
+    ],
+    'semi': ['error', 'always'],
+    'no-extra-semi': 'error',
+    'quote-props': ['error', 'consistent-as-needed']
   }
 };
